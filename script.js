@@ -63,35 +63,5 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.hero-content .fade-in-up').forEach(el => el.classList.add('visible'));
     }, 100);
 
-    /* --- Contact Form Submission Mock --- */
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            
-            // Loading state
-            btn.innerHTML = 'Sending... <ion-icon name="sync-outline" class="spin"></ion-icon>';
-            btn.style.opacity = '0.8';
-            btn.disabled = true;
 
-            // Mock API Call Delay
-            setTimeout(() => {
-                btn.innerHTML = 'Message Sent! <ion-icon name="checkmark-circle-outline"></ion-icon>';
-                btn.classList.add('btn-success'); // Custom class could be added
-                btn.style.background = '#10b981'; // Success color
-                
-                contactForm.reset();
-
-                // Reset button text after 3 seconds
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                    btn.style.opacity = '1';
-                    btn.disabled = false;
-                }, 3000);
-            }, 1500);
-        });
-    }
 });
