@@ -90,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.add('btn-success');
                 btn.style.background = '#10b981';
                 
+                alert("Thank you! Your message has been safely received.");
+                
                 contactForm.reset();
 
                 setTimeout(() => {
